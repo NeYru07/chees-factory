@@ -1,0 +1,90 @@
+$primary-coolor: #3A260D;
+
+.header {
+  width: max-width;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  .mainHead {
+    width: max-width;
+    height: 8.6875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .item {
+      margin-right: 5.5625rem;
+      &:nth-child(1) {
+        margin-right: 2.5rem;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+	 .logo{
+		width: 21.6875rem;
+		height: 5.6875rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		.LogoText{
+			width: 12.1875rem;
+			font-weight: 900;
+			font-size: 2.4375rem;
+			color: $primary-coolor;
+			text-transform: uppercase;
+		}
+	 }
+
+	 .h3{
+		width: 15.375rem;
+		font-weight: 700;
+		font-size: 1.5rem;
+		color: #828282;
+	 }
+
+	 .contacts{
+		display: flex;
+		gap: 2rem;
+
+		span{
+			display: flex;
+			gap: 0.5rem;
+
+			a{
+				font-weight: 600;
+				font-size: 1rem;
+				color: $primary-coolor;
+			}
+		}
+	 }
+  }
+
+  nav{
+	width: max-width;
+	height: 5rem;
+	display: flex;
+	gap: 0;
+	align-items: center;
+	justify-content: center;
+	background-color: $primary-coolor;
+
+	.navLink{
+		display: flex;
+		align-items: center;
+		height: inherit;
+		padding: 0 6rem;
+		font-weight: 700;
+		font-size: 1.5rem;
+		color: white;
+	}
+
+	.activeNav{
+		background-color: #1E1305;
+	}
+  }
+}

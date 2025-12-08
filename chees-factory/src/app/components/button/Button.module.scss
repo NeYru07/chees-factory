@@ -1,0 +1,26 @@
+$primary-color: #FFD364;
+$hover-color: #EEE1E0;
+$active-color: #3A260D;
+
+.button {
+  padding: 1rem 1.5rem;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $hover-color;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    background-color: $active-color;
+    transform: translateY(0.0625rem);
+  }
+}

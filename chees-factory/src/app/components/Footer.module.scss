@@ -1,0 +1,65 @@
+.footer {
+  width: max-width;
+  height: 22.75rem;
+  display: flex;
+  padding: 5rem 0rem 1.1875rem 18.8125rem;
+  background-color: #ffd364;
+  position: relative;
+  flex-wrap: wrap;
+
+  .logo {
+    position: absolute;
+    top: 5rem;
+    left: 18.8125rem;
+  }
+  nav {
+    display: flex;
+    gap: 5.5625rem;
+    margin-left: 6.3125rem;
+
+    .navLink {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #3a260d;
+		height: fit-content;
+		transition: 0.2s ease;
+
+		&:hover{
+			color: #EEE1E0;
+		}
+		&:active {
+			transform: translateY(0.0625rem);
+		 }
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .contactsGap {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        span {
+          display: flex;
+          gap: 0.5rem;
+
+          a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #3a260d;
+          }
+        }
+      }
+    }
+  }
+  .bottom{
+	display: flex;
+	justify-content: space-between;
+	width: 82.5rem;
+	align-self: flex-end;
+	justify-self: start;
+  }
+}
