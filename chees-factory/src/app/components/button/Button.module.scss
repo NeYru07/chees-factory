@@ -1,6 +1,6 @@
-$primary-color: #FFD364;
-$hover-color: #EEE1E0;
-$active-color: #3A260D;
+$primary-color: #ffd364;
+$hover-color: #eee1e0;
+$active-color: #3a260d;
 
 .button {
   padding: 1rem 1.5rem;
@@ -9,7 +9,7 @@ $active-color: #3A260D;
   border: none;
   border-radius: 0.1875rem;
   cursor: pointer;
-  transition: background-color 0.3s ease; 
+  transition: all 0.3s ease;
   font-weight: 700;
   font-size: 1rem;
   text-transform: uppercase;
@@ -22,5 +22,6 @@ $active-color: #3A260D;
   &:active {
     background-color: $active-color;
     transform: translateY(0.0625rem);
+	 transition: 0.15s;
   }
 }

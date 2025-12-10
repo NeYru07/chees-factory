@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'СЫРОВАРОЧКА',
-  description: 'Учебный проект для изучения Next.js App Router и TypeScript.',
+  title: "СЫРОВАРОЧКА",
+  description: "Учебный проект для изучения Next.js App Router и TypeScript.",
 };
 
 export default function RootLayout({
@@ -27,11 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-			<Header />
+        <Header />
+        {/* показываем хлебные крошки на всех страницах (сам компонент скрывает их на главной) */}
+        <Breadcrumb />
 
         {children}
 
-		  <Footer />
+        <Footer />
       </body>
     </html>
   );

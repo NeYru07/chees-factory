@@ -3,46 +3,206 @@
 }
 
 .firstBlock {
-  width: max-width;
-  height: 39.8125rem;
+  /* обновлённый блок согласно инструкции */
+  width: 100%;
+  height: 37rem; /* сам блок 37rem в высоту */
   background-image: url(../../public/firstCheesBG.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 
-  .firstChees{
-	position: absolute;
-	top: 2.25rem;
-	left: 6.4375rem;
-	rotate: 65.3deg;
+  .firstChees {
+    position: absolute;
+    top: 2.25rem;
+    left: 6.4375rem;
+    transform: rotate(65.3deg);
   }
 
-  .secondChees{
-	position: absolute;
-	top: 3.8875rem;
-	left: 94.1625rem;
-	rotate: 0.9081rem;
+  .secondChees {
+    position: absolute;
+    top: 3.8875rem;
+    left: 94.1625rem;
+    transform: rotate(0.9081deg);
   }
 
-  .ThirdChees{
-	position: absolute;
-	top: 24.25rem;
-	left: 76.875rem;
+  .ThirdChees {
+    position: absolute;
+    top: 24.25rem;
+    left: 76.875rem;
+  }
+
+  /* контейнер Swiper — позиционируем относительно него все кнопки/пагинацию */
+  :global(.mySwiper) {
+    width: 100%;
+    height: 100% !important;
+    position: relative !important; /* важно: позиционирование контейнера */
+    overflow: visible;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  /* заставляем wrapper и слайды растягиваться на всю высоту контейнера */
+  :global(.mySwiper .swiper-wrapper) {
+    height: 100% !important;
+  }
+
+  :global(.mySwiper .swiper-slide) {
+    height: 100% !important;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .slideContent {
+    position: absolute;
+    left: 18.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: #3a260d;
+    width: 40.5rem;
+    height: 18.3125rem;
+    padding: 2.5rem 0 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: #fff;
+    border-radius: 0.1875rem;
+
+    h1 {
+      font-weight: 600;
+      font-size: 2.75rem;
+    }
+    h2 {
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    Button {
+      width: 8.375rem;
+      height: 3.1875rem;
+      padding: 0;
+    }
+  }
+
+  /* Навигационные стрелки: размер 48x48, смещения от краёв 10.75rem (позиционирование относительно .mySwiper) */
+  :global(.mySwiper .swiper-button-prev),
+  :global(.mySwiper .swiper-button-next) {
+    position: absolute;
+    top: 50%;
+    /* общий translateY — отдельные трансформы для поворота задаются ниже */
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.375rem;
+    background: #ffd364;
+    color: #3a260d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    z-index: 5;
+
+    /* использовать svg-иконку вместо текста ::after */
+    background-image: url("/arrowBtn.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 56% 56%;
+  }
+
+  /* Принудительно скрыть любой контент в ::after, чтобы не дублировалось */
+  :global(.mySwiper .swiper-button-prev)::after,
+  :global(.mySwiper .swiper-button-next)::after {
+    display: none !important;
+    content: "" !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+  }
+
+  :global(.mySwiper .swiper-navigation-icon) {
+    path {
+      display: none;
+    }
+  }
+
+  /* позиции кнопок относительно контейнера */
+  :global(.mySwiper .swiper-button-prev) {
+    left: 10.75rem !important;
+    /* повернуть левую кнопку (стрелка влево) */
+    transform: translateY(-50%) rotate(180deg) !important;
+  }
+
+  :global(.mySwiper .swiper-button-next) {
+    right: 10.75rem !important;
+    /* правая кнопка без поворота (стрелка вправо) */
+    transform: translateY(-50%) !important;
+  }
+
+  /* Убедиться, что background-size/position и transform применяются корректно. */
+  :global(.mySwiper .swiper-button-prev),
+  :global(.mySwiper .swiper-button-next) {
+    background-size: 56% 56% !important;
+    background-position: center !important;
+  }
+
+  /* Пагинация: 1.5rem от верхнего края блока, по центру контейнера.
+     используем !important, чтобы отменить внешние правила, которые могут переопределять top/bottom */
+  :global(.mySwiper .swiper-pagination) {
+    position: absolute !important;
+    top: 38.5rem !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    gap: 0.75rem;
+  }
+
+  /* Пагинация — квадраты 21x21, border-radius 0.1875rem */
+  :global(.mySwiper .swiper-pagination-bullet) {
+    width: 1.3125rem !important;
+    height: 1.3125rem !important;
+    background: #3a260d !important;
+    opacity: 1 !important;
+    border-radius: 0.1875rem !important;
+    margin: 0 0.375rem !important;
+  }
+
+  :global(.mySwiper .swiper-pagination-bullet-active) {
+    background: #ffd364 !important;
+    width: 1.3125rem !important;
+    height: 1.3125rem !important;
+    border: 0.125rem solid #3a260d !important;
   }
 }
 
 .h1 {
-  margin: 5rem 0 2.5rem 18.75rem;
+  margin: 7.8125rem 0 2.5rem 18.75rem;
   font-weight: 600;
   font-size: 2.75rem;
 }
 
 .advantages {
-  width: max-width;
+  width: 100%;
   height: fit-content;
   display: flex;
   gap: 0.75rem;
-  // flex-wrap: wrap;
+  /* flex-wrap: wrap;
+  margin-bottom: 14.0625rem; */
   margin-bottom: 14.0625rem;
 
   .advBlock {
@@ -81,140 +241,307 @@
       }
     }
   }
-
 }
 .thirdBlock {
   width: max-width;
   height: 37.25rem;
   background-image: url(../../public/cheesBG.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   padding: 5rem 0 5rem 18.75rem;
   color: #fff;
 
-  .workerImg{
-	position: absolute;
-	top: -8.1875rem;
-	left: 50.1875rem;
-	z-index: 0;
+  .workerImg {
+    position: absolute;
+    top: -8.1875rem;
+    left: 50.1875rem;
+    z-index: 0;
   }
 
-  .content{
-	z-index: 1;
-	width: fit-content;
-	height: fit-content;
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
+  .content {
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
-	h1{
-		width: max-content;
-		font-weight: 600;
-		font-size: 2.75rem;
-	}
-	h2{
-		width: max-content;
-		font-weight: 600;
-		font-size: 2rem;
-	}
+    h1 {
+      width: max-content;
+      font-weight: 600;
+      font-size: 2.75rem;
+    }
+    h2 {
+      width: max-content;
+      font-weight: 600;
+      font-size: 2rem;
+    }
 
-	.inputsBlock{
-		width: fit-content;
-		height: fit-content;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
+    .inputsBlock {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
 
-		p{
-			width: max-content;
-			font-weight: 400;
-			font-size: 1rem;
-		}
+      p {
+        width: max-content;
+        font-weight: 400;
+        font-size: 1rem;
+      }
 
-		.inputs{
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-			width: 27.1875rem;
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 27.1875rem;
 
-			.labelInput{
-				width: inherit;
-				height: fit-content;
-				display: flex;
-				flex-direction: column;
-				gap: 0.5rem;
+        .labelInput {
+          width: inherit;
+          height: fit-content;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
 
-				label{
-					font-weight: 600;
-					font-size: 1rem;
-				}
+          label {
+            font-weight: 600;
+            font-size: 1rem;
+          }
 
-				input{
-					width: inherit;
-					height: 3.1875rem;
-					border-radius: 0.1875rem;
-					border: none;
-					padding: 1rem 0 1rem 1.5rem;
-				}
+          input {
+            width: inherit;
+            height: 3.1875rem;
+            border-radius: 0.1875rem;
+            border: none;
+            padding: 1rem 0 1rem 1.5rem;
+          }
 
-				input::placeholder{
-					font-weight: 400;
-					font-size: 1rem;
-					color: #bdbdbd;
-				}
+          input::placeholder {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #bdbdbd;
+          }
 
-				input:focus{
-					outline: none;
-				}
-			}
+          input:focus {
+            outline: none;
+          }
+        }
+      }
+    }
 
-		}
-	}
-
-	Button{
-		width: 8.8125rem;
-		height: 3.1875rem;
-	}
+    Button {
+      width: 8.8125rem;
+      height: 3.1875rem;
+    }
   }
 }
 
-.fourthBlock{
-	width: 82.5rem;
-	height: fit-content;
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	align-self: center;
-	justify-self: center;
-	margin-top: 7.75rem;
-	margin-bottom: 7.75rem;
+.fourthBlock {
+  width: 82.5rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-self: center;
+  justify-self: center;
+  margin-top: 7.75rem;
+  margin-bottom: 7.75rem;
 
-	h1{
-		font-weight: 600;
-		font-size: 2.75rem;
-	}
-	h2{
-		font-weight: 600;
-		font-size: 2rem;
-		color: #ffd364;
-	}
-	p{
-		font-weight: 400;
-		font-size: 1rem;
-	}
+  h1 {
+    font-weight: 600;
+    font-size: 2.75rem;
+  }
+  h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: #ffd364;
+  }
+  p {
+    font-weight: 400;
+    font-size: 1rem;
+  }
 }
 
-.fithBlock{
-	width: max-width;
-	height: 52.875rem;
-	background-image: url(../../public/fiveBG.jpg);
-	background-repeat: no-repeat;
-	background-size: contain;
+.fithBlock {
+  width: 100%;
+  height: 52.875rem;
+  background-image: url(../../public/fiveBG.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+  .content {
+    width: 82.5625rem;
+    height: 42.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+      font-weight: 600;
+      font-size: 2.75rem;
+    }
+
+    .documents {
+      width: inherit;
+      height: max-content;
+      display: flex;
+      gap: 2.9375rem;
+      align-items: center;
+
+      .sliderDocument {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+
+        Button {
+          padding: 0;
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+  }
 }
 
-.sixthBlock{
-	width: max-width;
-	height: 32.3125rem;
-	background-color: #3a260d;
+.sixthBlock {
+  width: 100%;
+  height: 32.3125rem;
+  background-color: #3a260d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    width: 98.5rem;
+    height: 22.3125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    .textTop {
+      width: 82.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+
+      h1 {
+        font-weight: 600;
+        font-size: 2.75rem;
+      }
+
+      span {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        Link,
+        a {
+          font-weight: 600;
+          font-size: 1rem;
+          color: #ffd364;
+        }
+      }
+    }
+    .reviewsSlider {
+      width: inherit;
+      height: fit-content;
+      display: flex;
+      gap: 5rem;
+      align-items: center;
+
+      Button {
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .reviews {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        gap: 1.5rem;
+
+        .reviewBlock {
+          width: 40.5rem;
+          height: 17.0625rem;
+          padding: 1.5rem 1.6875rem 0 1.6875rem;
+          display: flex;
+          flex-direction: column;
+          background-color: #fff;
+          border-radius: 0.1875rem;
+          color: #3a260d;
+
+          .top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            h3 {
+              font-weight: 700;
+              font-size: 1.5rem;
+            }
+
+            .stars {
+              display: flex;
+              gap: 0.5625rem;
+            }
+          }
+
+          .date {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #4f4f4f;
+            margin-top: 0.1875rem;
+            margin-bottom: 1.8125rem;
+            align-self: flex-end;
+          }
+
+          .reviewText {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #262626;
+            height: max-content;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* подсказка об ошибке — уменьшенный отступ */
+.error {
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: inline-block;
+}
+
+/* Стили состояния поля при ошибке */
+.labelInput.invalid input {
+  border: 0.0625rem solid #ff6b6b;
+  box-shadow: 0 0 0.75rem 0.25rem rgba(255, 107, 107, 0.25);
+  outline: none;
+}
+
+/* Стили состояния поля при корректном заполнении */
+.labelInput.valid input {
+  border: 0.0625rem solid #4caf50;
+  box-shadow: 0 0 0.75rem 0.25rem rgba(76, 175, 80, 0.25);
+  outline: none;
+}
+
+/* Слегка подчеркнуть при фокусе (если поле уже валидно или нет) */
+.labelInput input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(58, 38, 13, 0.04);
+  outline: none;
 }

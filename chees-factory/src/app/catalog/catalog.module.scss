@@ -1,0 +1,47 @@
+.catalog{
+	width: fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	justify-self: center;
+	align-self: center;
+	margin-bottom: 5rem;
+
+	h1{
+		font-weight: 600;
+		font-size: 2rem;
+		color: #3A260D;
+	}
+
+	.catalogCards{
+		width: fit-content;
+		height: fit-content;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1.5rem;
+
+		.card{
+			width: 26.5rem;
+			height: 21.75rem;
+			padding: 1.5rem 4.1875rem 2rem 4.1875rem;
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			border: 0.0625rem solid #3A260D;
+			border-radius: 0.1875rem;
+			align-items: center;
+
+			Image{
+				width: 18.125rem;
+				height: 13.875rem;
+			}
+
+			h2{
+				font-weight: 600;
+				font-size: 2rem;
+				color: #3A260D;
+			}
+		}
+	}
+}

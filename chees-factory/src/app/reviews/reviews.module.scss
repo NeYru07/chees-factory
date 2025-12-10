@@ -1,0 +1,87 @@
+.reviewBlock {
+  width: 40.5rem;
+  height: 17.0625rem;
+  padding: 1.5rem 1.6875rem 0 1.6875rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee1e0;
+  border-radius: 0.1875rem;
+  color: #3a260d;
+
+  .top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .stars {
+      display: flex;
+      gap: 0.5625rem;
+    }
+  }
+
+  .date {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #4f4f4f;
+    margin-top: 0.1875rem;
+    margin-bottom: 1.8125rem;
+    align-self: flex-end;
+  }
+
+  .reviewText {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #262626;
+    height: max-content;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 7.75rem;
+
+  .topText {
+    width: 82.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      color: #3a260d;
+      font-weight: 600;
+      font-size: 2.75rem;
+    }
+
+    Button {
+      background-color: #3a260d;
+
+      &:hover {
+        background-color: #eee1e0;
+      }
+
+      &:active {
+        background-color: #ffd364;
+      }
+    }
+  }
+
+  .mid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .bottomBtn {
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
+  }
+}
