@@ -12,6 +12,8 @@
   position: relative;
 
   .firstChees {
+    width: 10.25rem;
+    height: 5.8125rem;
     position: absolute;
     top: 2.25rem;
     left: 6.4375rem;
@@ -19,6 +21,8 @@
   }
 
   .secondChees {
+    width: 10.25rem;
+    height: 5.8125rem;
     position: absolute;
     top: 3.8875rem;
     left: 94.1625rem;
@@ -26,6 +30,8 @@
   }
 
   .ThirdChees {
+	width: 30.9375rem;
+	height: 17.625rem;
     position: absolute;
     top: 24.25rem;
     left: 76.875rem;
@@ -219,6 +225,11 @@
       display: flex;
       gap: 1.5rem;
 
+		.bigStar{
+			width: 6rem;
+			height: 5.625rem;
+		}
+
       .text {
         width: fit-content;
         height: fit-content;
@@ -338,7 +349,8 @@
 }
 
 .fourthBlock {
-  width: 82.5rem;
+  width: fit-content;
+  max-width:  82.5rem;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -375,7 +387,8 @@
   color: #fff;
 
   .content {
-    width: 82.5625rem;
+    width: fit-content;
+	 max-width: 82.5625rem;
     height: 42.875rem;
     display: flex;
     flex-direction: column;
@@ -392,6 +405,21 @@
       display: flex;
       gap: 2.9375rem;
       align-items: center;
+
+		Image{
+			width: 19.5rem;
+			height: 27.625rem;
+		}
+
+		Button Image{
+			width: 1.4375rem;
+			height: 1.0625rem;
+		}
+
+		.BigDoc{
+			width: 26.5625rem;
+			height: 37.625rem;
+		}
 
       .sliderDocument {
         width: fit-content;

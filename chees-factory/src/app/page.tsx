@@ -157,7 +157,7 @@ export default function Home() {
       <div className={styles.advantages}>
         <div className={styles.advBlock}>
           <div className={styles.components}>
-            <Image src={SvgStar} alt="Star" width={96} height={90} />
+            <Image className={styles.bigStar} src={SvgStar} alt="Star" width={96} height={90} />
             <div className={styles.text}>
               <h4>Не плесневеет</h4>
               <p>Мы проверяли</p>
@@ -166,7 +166,7 @@ export default function Home() {
         </div>
         <div className={styles.advBlock}>
           <div className={styles.components}>
-            <Image src={SvgStar} alt="Star" width={96} height={90} />
+            <Image className={styles.bigStar} src={SvgStar} alt="Star" width={96} height={90} />
             <div className={styles.text}>
               <h4>Не дорожает</h4>
               <p>Мы покупали</p>
@@ -175,7 +175,7 @@ export default function Home() {
         </div>
         <div className={styles.advBlock}>
           <div className={styles.components}>
-            <Image src={SvgStar} alt="Star" width={96} height={90} />
+            <Image className={styles.bigStar} src={SvgStar} alt="Star" width={96} height={90} />
             <div className={styles.text}>
               <h4>Не кричит</h4>
               <p>Мы уточним</p>
@@ -287,7 +287,7 @@ export default function Home() {
                   style={{ transform: "rotate(180deg)" }}
                 />
               </Button>
-              <Image src={Document2} alt="Document2" width={425} height={602} />
+              <Image className={styles.BigDoc} src={Document2} alt="Document2" width={425} height={602} />
               <Button>
                 <Image src={ArrowBtn} alt="Arrow" width={23} height={17} />
               </Button>
