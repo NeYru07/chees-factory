@@ -1,13 +1,10 @@
-$blur-width: 5rem; // Ширина зоны размытия
-$bg-color: #EEE1E0; // Цвет фона страницы (важно!)
+$blur-width: 5rem;
+$bg-color: #eee1e0;
 
 .swiperWrapper {
-  position: relative; 
+  position: relative;
   overflow: hidden;
   width: 100%;
-  // Убедитесь, что сам свайпер имеет достаточный padding, 
-  // чтобы его контент не был полностью скрыт оверлеем.
-//   padding: 0 $blur-width; 
 }
 
 .blurOverlay {
@@ -17,15 +14,15 @@ $bg-color: #EEE1E0; // Цвет фона страницы (важно!)
   width: $blur-width;
   z-index: 10;
   pointer-events: none;
-  backdrop-filter: blur(25%); 
+  backdrop-filter: blur(25%);
   -webkit-backdrop-filter: blur(0.625rem);
 }
 
 .blurLeft {
   left: 0;
   background: linear-gradient(
-    to right, 
-    $bg-color 0%,(закрывает край)
+    to right,
+    $bg-color 0%,
     rgba($bg-color, 0.5) 70%,
     transparent 100%
   );
@@ -34,7 +31,7 @@ $bg-color: #EEE1E0; // Цвет фона страницы (важно!)
 .blurRight {
   right: 0;
   background: linear-gradient(
-    to left, 
+    to left,
     $bg-color 0%,
     rgba($bg-color, 0.5) 70%,
     transparent 100%

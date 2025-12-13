@@ -30,8 +30,8 @@
   }
 
   .ThirdChees {
-	width: 30.9375rem;
-	height: 17.625rem;
+    width: 30.9375rem;
+    height: 17.625rem;
     position: absolute;
     top: 24.25rem;
     left: 76.875rem;
@@ -101,12 +101,10 @@
     }
   }
 
-  /* Навигационные стрелки: размер 48x48, смещения от краёв 10.75rem (позиционирование относительно .mySwiper) */
   :global(.mySwiper .swiper-button-prev),
   :global(.mySwiper .swiper-button-next) {
     position: absolute;
     top: 50%;
-    /* общий translateY — отдельные трансформы для поворота задаются ниже */
     transform: translateY(-50%);
     width: 3rem;
     height: 3rem;
@@ -119,14 +117,12 @@
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
     z-index: 5;
 
-    /* использовать svg-иконку вместо текста ::after */
     background-image: url("/arrowBtn.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 56% 56%;
   }
 
-  /* Принудительно скрыть любой контент в ::after, чтобы не дублировалось */
   :global(.mySwiper .swiper-button-prev)::after,
   :global(.mySwiper .swiper-button-next)::after {
     display: none !important;
@@ -142,28 +138,22 @@
     }
   }
 
-  /* позиции кнопок относительно контейнера */
   :global(.mySwiper .swiper-button-prev) {
     left: 10.75rem !important;
-    /* повернуть левую кнопку (стрелка влево) */
     transform: translateY(-50%) rotate(180deg) !important;
   }
 
   :global(.mySwiper .swiper-button-next) {
     right: 10.75rem !important;
-    /* правая кнопка без поворота (стрелка вправо) */
     transform: translateY(-50%) !important;
   }
 
-  /* Убедиться, что background-size/position и transform применяются корректно. */
   :global(.mySwiper .swiper-button-prev),
   :global(.mySwiper .swiper-button-next) {
     background-size: 56% 56% !important;
     background-position: center !important;
   }
 
-  /* Пагинация: 1.5rem от верхнего края блока, по центру контейнера.
-     используем !important, чтобы отменить внешние правила, которые могут переопределять top/bottom */
   :global(.mySwiper .swiper-pagination) {
     position: absolute !important;
     top: 38.5rem !important;
@@ -178,7 +168,6 @@
     gap: 0.75rem;
   }
 
-  /* Пагинация — квадраты 21x21, border-radius 0.1875rem */
   :global(.mySwiper .swiper-pagination-bullet) {
     width: 1.3125rem !important;
     height: 1.3125rem !important;
@@ -207,8 +196,6 @@
   height: fit-content;
   display: flex;
   gap: 0.75rem;
-  /* flex-wrap: wrap;
-  margin-bottom: 14.0625rem; */
   margin-bottom: 14.0625rem;
 
   .advBlock {
@@ -225,10 +212,10 @@
       display: flex;
       gap: 1.5rem;
 
-		.bigStar{
-			width: 6rem;
-			height: 5.625rem;
-		}
+      .bigStar {
+        width: 6rem;
+        height: 5.625rem;
+      }
 
       .text {
         width: fit-content;
@@ -253,6 +240,7 @@
     }
   }
 }
+
 .thirdBlock {
   width: max-width;
   height: 37.25rem;
@@ -264,6 +252,8 @@
   color: #fff;
 
   .workerImg {
+    width: 68.125rem;
+    height: 45.4375rem;
     position: absolute;
     top: -8.1875rem;
     left: 50.1875rem;
@@ -350,7 +340,7 @@
 
 .fourthBlock {
   width: fit-content;
-  max-width:  82.5rem;
+  max-width: 82.5rem;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -388,7 +378,7 @@
 
   .content {
     width: fit-content;
-	 max-width: 82.5625rem;
+    max-width: 82.5625rem;
     height: 42.875rem;
     display: flex;
     flex-direction: column;
@@ -406,20 +396,20 @@
       gap: 2.9375rem;
       align-items: center;
 
-		Image{
-			width: 19.5rem;
-			height: 27.625rem;
-		}
+      img {
+        width: 19.5rem;
+        height: 27.625rem;
+      }
 
-		Button Image{
-			width: 1.4375rem;
-			height: 1.0625rem;
-		}
+      Button img {
+        width: 1.4375rem;
+        height: 1.0625rem;
+      }
 
-		.BigDoc{
-			width: 26.5625rem;
-			height: 37.625rem;
-		}
+      .BigDoc {
+        width: 26.5625rem;
+        height: 37.625rem;
+      }
 
       .sliderDocument {
         width: fit-content;
@@ -472,6 +462,11 @@
         gap: 1rem;
         align-items: center;
 
+		  img{
+			width: 1.125rem;
+			height: 0.9375rem;
+		  }
+
         Link,
         a {
           font-weight: 600;
@@ -491,6 +486,11 @@
         padding: 0;
         width: 3rem;
         height: 3rem;
+
+		  img{
+			width: 1.4375rem;
+			height: 1.0625rem;
+		  }
       }
 
       .reviews {
@@ -522,6 +522,11 @@
             .stars {
               display: flex;
               gap: 0.5625rem;
+
+				  img{
+					width: 1.0625rem;
+					height: 0.875rem;
+				  }
             }
           }
 

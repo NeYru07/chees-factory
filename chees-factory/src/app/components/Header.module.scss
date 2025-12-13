@@ -31,6 +31,11 @@ $primary-coolor: #3A260D;
 		align-items: center;
 		gap: 0.5rem;
 
+		img{
+			width: 9rem;
+			height: 5.6875rem;
+		}
+
 		.LogoText{
 			width: 12.1875rem;
 			font-weight: 900;
@@ -54,6 +59,11 @@ $primary-coolor: #3A260D;
 		span{
 			display: flex;
 			gap: 0.5rem;
+
+			img{
+				width: 1.125rem;
+				height: 0.9375rem;
+			}
 
 			a{
 				font-weight: 600;

@@ -50,7 +50,7 @@ export default function ContactsPage() {
           </div>
         </div>
       </div>
-		<Image src={Map} alt='Map' width={1940} height={462}/>
+		<Image className={styles.MapImg} src={Map} alt='Map' width={1940} height={462}/>
     </div>
   );
 }
