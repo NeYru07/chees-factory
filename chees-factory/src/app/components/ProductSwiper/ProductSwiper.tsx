@@ -35,12 +35,12 @@ const ProductSwiper: React.FC<ProductSwiperProps> = ({ products }) => {
           delay: 1500,
           disableOnInteraction: false,
         }}
-        //   spaceBetween={24}
-        //   slidesPerView={5.5}
+          spaceBetween={96}
+          slidesPerView={3}
         breakpoints={{
-          768: { slidesPerView: 3, spaceBetween: 8 },
-          1024: { slidesPerView: 4, spaceBetween: 12 },
-          1440: { slidesPerView: 5, spaceBetween: 18 },
+          768: { slidesPerView: 3, spaceBetween: 48 },
+          1024: { slidesPerView: 4, spaceBetween: 32 },
+          1440: { slidesPerView: 5, spaceBetween: 24 },
           1920: { slidesPerView: 5.5, spaceBetween: 24 },
         }}
       >
