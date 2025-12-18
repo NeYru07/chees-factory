@@ -1,11 +1,7 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Button from "../button/Button";
 import styles from "./CheesSlider.module.scss"
 import ProductSwiper from "../ProductSwiper/ProductSwiper";
-
-// images
 
 const dummyProducts = [
     { id: 1, name: "Сыр с плесенью", price: 120 },

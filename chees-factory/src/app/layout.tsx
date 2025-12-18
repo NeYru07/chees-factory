@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header />
-        {/* показываем хлебные крошки на всех страницах (сам компонент скрывает их на главной) */}
+        
         <Breadcrumb />
 
         {children}

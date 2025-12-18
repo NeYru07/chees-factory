@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import styles from "./breadcrumb.module.scss";
 
 function humanize(segment: string) {
-  // простой хуманайзер: заменяет дефисы на пробелы и делает первую букву заглавной
+  // хуманайзер: заменяет дефисы на пробелы и делает первую букву заглавной
   const s = segment.replace(/[-_]/g, " ");
   return s.charAt(0).toUpperCase() + s.slice(1);
 }

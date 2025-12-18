@@ -113,7 +113,6 @@ export default function Home() {
         >
           <SwiperSlide>
             <div className={styles.slide}>
-              {/* оставляем только движущийся карточный блок — фон берётся из .firstBlock */}
               <div className={styles.slideContent}>
                 <h1>Наш сыр лучше всех!</h1>
                 <h2>Не верите? Проверьте сами!</h2>

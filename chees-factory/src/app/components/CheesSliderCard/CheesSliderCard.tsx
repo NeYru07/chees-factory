@@ -5,11 +5,8 @@ import Button from "../button/Button";
 import styles from "./CheesSliderCard.module.scss"
 import StarRating from "../StarRating/StarRating";
 
-// images
-
-
 interface CardProps {
-  // src изображения. Типизируем как любую строку или объект ImageModule (как ниже)
+  // src изображения. Типизируем как любую строку или объект ImageModule
   imageSrc: any; 
   altText: string;
   name: string;
